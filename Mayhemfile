@@ -1,0 +1,13 @@
+image: beta.forallsecure.com:5000/rust-webserver-example:v1.0.0     
+duration: 60                                 
+project: bengutierrez/rust-webserver-example   
+target: rust-webserver-example
+
+cmds:
+  - cmd: /usr/local/bin/rust-webserver-example
+    network:
+      url: tcp://localhost:7878
+      timeout: 2
+      client: false
+    env:
+      MFUZZ_COMPAT_LEVEL: "2"
